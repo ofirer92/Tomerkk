@@ -1,6 +1,14 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const getResend = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.warn("RESEND_API_KEY is not defined. Email functionality will be disabled.");
+    return null;
+  }
+  return new Resend(apiKey);
+};
+
 const TOMER_EMAIL = process.env.TOMER_EMAIL ?? "tomer@example.com";
 const FROM_EMAIL =
   process.env.FROM_EMAIL ?? "notifications@tomersgarage.com";
@@ -14,6 +22,9 @@ export async function notifyNewEstimate(data: {
   preferred_date?: string;
   preferred_time?: string;
 }) {
+  const resend = getResend();
+  if (!resend) return;
+
   const lines = [
     `Name: ${data.name}`,
     `Phone: ${data.phone}`,
