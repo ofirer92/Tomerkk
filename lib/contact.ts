@@ -20,8 +20,9 @@ export const BUSINESS = {
   serviceArea: "Maryland",
 } as const;
 
-/** GitHub Pages serves the site under this sub-path. */
-export const BASE_PATH = "/tomerkk";
+import { BASE_PATH } from "@/lib/base-path";
+
+export { BASE_PATH };
 
 /** Prefix a public asset with the base path (next/image does not do this). */
 export function asset(path: string) {

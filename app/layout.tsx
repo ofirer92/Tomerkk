@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "react-hot-toast";
 import { BUSINESS, IMAGES } from "@/lib/contact";
+import { SITE_URL as SITE_URL_DEFAULT } from "@/lib/base-path";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -12,7 +13,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://ofirer92.github.io/tomerkk";
+  process.env.NEXT_PUBLIC_SITE_URL ?? SITE_URL_DEFAULT;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

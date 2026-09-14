@@ -10,9 +10,10 @@ import WorkGallerySection from "@/components/landing/WorkGallerySection";
 import SectionHeading from "@/components/shared/SectionHeading";
 import CTAButton from "@/components/shared/CTAButton";
 import WhatsAppIcon from "@/components/shared/WhatsAppIcon";
-import { BUSINESS, CONTACT_LINKS, IMAGES } from "@/lib/contact";
+import { BUSINESS, CONTACT_LINKS } from "@/lib/contact";
+import { SITE_URL as SITE_URL_DEFAULT } from "@/lib/base-path";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ofirer92.github.io/tomerkk";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? SITE_URL_DEFAULT;
 
 export const metadata: Metadata = {
   alternates: {
