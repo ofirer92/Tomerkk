@@ -45,7 +45,7 @@ export default function BookPage() {
       <section className="relative bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 bg-grid-light opacity-50" aria-hidden="true" />
         <div className="relative max-w-5xl mx-auto px-4 pt-12 pb-16 md:pt-16 md:pb-24 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent mb-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold mb-3">
             Free estimate
           </p>
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
@@ -109,11 +109,11 @@ export default function BookPage() {
 
           <div className="bg-surface border border-gray-200/80 rounded-3xl p-6 text-sm space-y-3">
             <p className="flex items-center gap-3 text-primary">
-              <Clock className="w-4 h-4 text-accent flex-shrink-0" />
+              <Clock className="w-4 h-4 text-gold flex-shrink-0" />
               {BUSINESS.hours} · Emergency service available
             </p>
             <p className="flex items-center gap-3 text-primary">
-              <ShieldCheck className="w-4 h-4 text-accent flex-shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
               Licensed &amp; insured · Serving all of {BUSINESS.serviceArea}
             </p>
           </div>

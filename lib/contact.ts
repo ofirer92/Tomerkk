@@ -1,13 +1,13 @@
 /**
- * Single source of truth for business contact details.
+ * Single source of truth for business details.
  * Update here and every button, link, and schema entry on the site follows.
  */
 
 export const BUSINESS = {
-  name: "Tomer's Garage Door Services",
-  shortName: "Tomer's Garage",
+  name: "Kabriz Garage Doors",
+  shortName: "Kabriz",
   owner: "Tomer",
-  tagline: "Garage door repair & installation across Maryland",
+  tagline: "Sales · Installation · Repair",
   /** E.164 format — used for tel: links, WhatsApp, and structured data */
   phoneE164: "+14433814876",
   /** WhatsApp wants digits only, no plus sign */
@@ -18,6 +18,21 @@ export const BUSINESS = {
   hours: "Mon–Sat · 7am – 7pm",
   hoursSchema: "Mo-Sa 07:00-19:00",
   serviceArea: "Maryland",
+} as const;
+
+/** GitHub Pages serves the site under this sub-path. */
+export const BASE_PATH = "/tomerkk";
+
+/** Prefix a public asset with the base path (next/image does not do this). */
+export function asset(path: string) {
+  return `${BASE_PATH}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export const IMAGES = {
+  logo: asset("/images/logo.png"),
+  og: asset("/images/og.jpg"),
+  tomerTruck: asset("/images/tomer-truck.jpg"),
+  springInstall: asset("/images/work-spring-install.jpg"),
 } as const;
 
 const DEFAULT_WHATSAPP_MESSAGE =

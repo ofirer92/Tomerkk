@@ -2,14 +2,16 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu, X, Wrench, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
+import Logo from "@/components/shared/Logo";
 import { BUSINESS, CONTACT_LINKS } from "@/lib/contact";
 import WhatsAppIcon from "@/components/shared/WhatsAppIcon";
 
 const navLinks = [
   { href: "/#services", label: "Services" },
   { href: "/#how-it-works", label: "How it works" },
-  { href: "/#why-me", label: "Why Tomer?" },
+  { href: "/#our-work", label: "Our work" },
+  { href: "/#why-me", label: "Why Kabriz?" },
   { href: "/#promotions", label: "Promotions" },
 ];
 
@@ -47,7 +49,7 @@ export default function Header() {
           <div className="flex items-center gap-5">
             <a
               href={CONTACT_LINKS.email}
-              className="inline-flex items-center gap-1.5 hover:text-accent transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-gold transition-colors"
             >
               <Mail className="w-3.5 h-3.5" />
               {BUSINESS.email}
@@ -56,7 +58,7 @@ export default function Header() {
               href={CONTACT_LINKS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-accent transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-gold transition-colors"
             >
               <WhatsAppIcon className="w-3.5 h-3.5" />
               WhatsApp
@@ -69,16 +71,14 @@ export default function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-white font-bold text-lg"
+          className="flex items-center gap-3 text-white font-bold text-lg"
           onClick={() => setOpen(false)}
         >
-          <span className="w-9 h-9 rounded-xl bg-accent flex items-center justify-center shadow-md shadow-accent/30">
-            <Wrench className="w-5 h-5 text-white" />
-          </span>
+          <Logo size={44} priority className="shadow-md shadow-black/20" />
           <span className="leading-tight">
-            Tomer&apos;s <span className="text-accent">Garage</span>
+            Kabriz <span className="text-gold">Garage Doors</span>
             <span className="block text-[10px] font-medium tracking-wider uppercase text-white/60">
-              Door Services · MD
+              {BUSINESS.tagline}
             </span>
           </span>
         </Link>
@@ -102,7 +102,7 @@ export default function Header() {
             href={CONTACT_LINKS.phone}
             className="inline-flex items-center gap-2 text-white font-semibold text-sm px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
           >
-            <Phone className="w-4 h-4 text-accent" />
+            <Phone className="w-4 h-4 text-gold" />
             {BUSINESS.phoneDisplay}
           </a>
           <Link
@@ -166,7 +166,7 @@ export default function Header() {
               href={CONTACT_LINKS.email}
               className="flex items-center justify-center gap-2 bg-white/10 text-white font-semibold py-3 rounded-xl"
             >
-              <Mail className="w-5 h-5 text-accent" />
+              <Mail className="w-5 h-5 text-gold" />
               Email
             </a>
           </div>

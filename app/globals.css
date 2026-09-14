@@ -2,15 +2,17 @@
 
 @theme {
   /* Brand palette */
-  --color-primary: #0f2740;
-  --color-primary-dark: #0a1a2c;
-  --color-primary-light: #1e3a5f;
-  --color-accent: #f97316;
-  --color-accent-hover: #ea6c0a;
-  --color-accent-soft: #fff4ec;
+  --color-primary: #1d3a6b;
+  --color-primary-dark: #12274a;
+  --color-primary-light: #2a4f8f;
+  --color-accent: #c8102e;
+  --color-accent-hover: #a80d26;
+  --color-accent-soft: #fdeef0;
+  --color-gold: #d4a017;
+  --color-gold-soft: #fdf6e3;
   --color-whatsapp: #25d366;
   --color-whatsapp-hover: #1ebe5a;
-  --color-surface: #f7f8fa;
+  --color-surface: #f7f5f1;
   --color-ink: #0f172a;
   --color-muted: #64748b;
   --color-danger-bg: #fef2f2;
@@ -25,7 +27,7 @@
   --color-status-completed-text: #166534;
 
   /* Font */
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
   /* Motion */
@@ -91,7 +93,7 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: #fffdfa;
   color: var(--color-ink);
   text-rendering: optimizeLegibility;
 }

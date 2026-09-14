@@ -35,7 +35,7 @@ export default function PromotionsSection() {
         <SectionHeading
           eyebrow="Offers"
           title="Current promotions"
-          subtitle="Honest pricing, plus a little extra when you book with Tomer."
+          subtitle="Honest pricing, plus a little extra when you book with Kabriz."
           centered
         />
 
@@ -53,8 +53,8 @@ export default function PromotionsSection() {
                 <span
                   className={`inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-semibold rounded-full px-3 py-1 ${
                     p.highlight
-                      ? "bg-accent text-white"
-                      : "bg-accent-soft text-accent border border-orange-100"
+                      ? "bg-gold text-primary-dark"
+                      : "bg-accent-soft text-accent border border-red-100"
                   }`}
                 >
                   {p.highlight ? (

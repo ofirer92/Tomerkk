@@ -1,6 +1,7 @@
-# Tomer's Garage Door Services
+# Kabriz Garage Doors
 
-Marketing site for an independent garage door repair business in Maryland.
+Marketing site for Kabriz Garage Doors, a family-run garage door sales,
+installation and repair business in Maryland.
 Built with Next.js (App Router, static export) and Tailwind CSS, deployed to
 GitHub Pages at <https://ofirer92.github.io/tomerkk/>.
 
@@ -19,7 +20,9 @@ Every button, link, form, and the LocalBusiness structured data read from it.
 - **Static-friendly forms** — the estimate and cancellation forms compose a
   pre-filled WhatsApp message or email instead of posting to an API, so they
   work on GitHub Pages.
-- **Installable** — web manifest, SVG icon, and theme color for mobile devices.
+- **Installable** — web manifest, PNG icons generated from the logo, and theme
+  color for mobile devices.
+- **Brand assets** live in `public/images/` (logo, share image, work photos).
 
 ## Development
 

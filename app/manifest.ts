@@ -1,37 +1,25 @@
 import type { MetadataRoute } from "next";
-import { BUSINESS } from "@/lib/contact";
+import { BASE_PATH, BUSINESS } from "@/lib/contact";
 
 export const dynamic = "force-static";
-
-const BASE = "/tomerkk";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: BUSINESS.name,
     short_name: BUSINESS.shortName,
-    description: BUSINESS.tagline,
-    start_url: `${BASE}/`,
-    scope: `${BASE}/`,
+    description: `${BUSINESS.name} — ${BUSINESS.tagline}`,
+    start_url: `${BASE_PATH}/`,
+    scope: `${BASE_PATH}/`,
     display: "standalone",
-    background_color: "#0f2740",
-    theme_color: "#0f2740",
+    background_color: "#ffffff",
+    theme_color: "#1d3a6b",
     icons: [
-      {
-        src: `${BASE}/icon.svg`,
-        sizes: "any",
-        type: "image/svg+xml",
-        purpose: "any",
-      },
+      { src: `${BASE_PATH}/icon.png`, sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: `${BASE_PATH}/apple-icon.png`, sizes: "180x180", type: "image/png" },
     ],
     shortcuts: [
-      {
-        name: "WhatsApp Tomer",
-        url: `https://wa.me/${BUSINESS.phoneWhatsApp}`,
-      },
-      {
-        name: "Call Tomer",
-        url: `tel:${BUSINESS.phoneE164}`,
-      },
+      { name: `WhatsApp ${BUSINESS.owner}`, url: `https://wa.me/${BUSINESS.phoneWhatsApp}` },
+      { name: `Call ${BUSINESS.owner}`, url: `tel:${BUSINESS.phoneE164}` },
     ],
   };
 }

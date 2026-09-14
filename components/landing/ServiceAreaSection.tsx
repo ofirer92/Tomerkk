@@ -21,7 +21,7 @@ export default function ServiceAreaSection() {
           <SectionHeading
             eyebrow="Where I work"
             title="Serving all of Maryland"
-            subtitle="Based in the Baltimore area and on the road every day. If you're in Maryland, I can get to you — usually the same day."
+            subtitle="Kabriz is based in the Baltimore area and on the road every day. If you're in Maryland, I can get to you — usually the same day."
           />
         </div>
         <div className="md:col-span-7">
@@ -35,7 +35,7 @@ export default function ServiceAreaSection() {
                 {area}
               </li>
             ))}
-            <li className="inline-flex items-center gap-2 bg-accent-soft border border-orange-100 rounded-full px-4 py-2 text-sm font-medium text-accent">
+            <li className="inline-flex items-center gap-2 bg-gold-soft border border-gold/30 rounded-full px-4 py-2 text-sm font-medium text-primary">
               + surrounding areas
             </li>
           </ul>

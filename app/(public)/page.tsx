@@ -6,10 +6,11 @@ import HowItWorksSection from "@/components/landing/HowItWorksSection";
 import WhyMeSection from "@/components/landing/WhyMeSection";
 import PromotionsSection from "@/components/landing/PromotionsSection";
 import ServiceAreaSection from "@/components/landing/ServiceAreaSection";
+import WorkGallerySection from "@/components/landing/WorkGallerySection";
 import SectionHeading from "@/components/shared/SectionHeading";
 import CTAButton from "@/components/shared/CTAButton";
 import WhatsAppIcon from "@/components/shared/WhatsAppIcon";
-import { BUSINESS, CONTACT_LINKS } from "@/lib/contact";
+import { BUSINESS, CONTACT_LINKS, IMAGES } from "@/lib/contact";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ofirer92.github.io/tomerkk";
 
@@ -23,8 +24,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: BUSINESS.name,
+  alternateName: "Kabriz Garage Doors — Sales, Installation, Repair",
   description:
-    "Professional garage door repair and installation in Maryland. Springs, openers, off-track repair.",
+    "Friendly, licensed garage door sales, installation and repair in Maryland. Springs, openers, off-track repair.",
+  logo: `${SITE_URL}/images/logo.png`,
+  image: `${SITE_URL}/images/og.jpg`,
   telephone: BUSINESS.phoneE164,
   email: BUSINESS.email,
   url: SITE_URL,
@@ -97,7 +101,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="What I fix"
             title="Most common garage door issues"
-            subtitle="If your garage door is giving you trouble, chances are it's one of these. Tap one to learn what's happening and what to do."
+            subtitle="If your garage door is giving you trouble, it's probably one of these. Tap one to see what's happening and what to do next."
             centered
           />
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -108,6 +112,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <WorkGallerySection />
       <HowItWorksSection />
       <WhyMeSection />
       <PromotionsSection />
@@ -123,11 +128,12 @@ export default function HomePage() {
           />
           <div className="relative">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
-              Ready to fix your garage door?
+              Let's fix your garage door
             </h2>
             <p className="text-white/75 text-lg mb-8 max-w-xl mx-auto">
-              Message me on WhatsApp, call, or email — whichever is easiest.
-              I&apos;ll get back to you fast with a straight answer.
+              WhatsApp, call, or email — whichever is easiest for you.
+              I&apos;ll get back to you quickly with a straight answer and a
+              fair price.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <CTAButton href={CONTACT_LINKS.whatsapp} variant="whatsapp" size="lg">
