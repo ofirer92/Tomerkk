@@ -34,15 +34,20 @@ export default function HeroSection() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight animate-fade-up stagger-100">
-            Hi, I&apos;m {BUSINESS.owner}.
-            <br />
-            <span className="text-gold">Let&apos;s get your garage door working again.</span>
+            Let&apos;s get your garage door{" "}
+            <span className="text-gold">working again.</span>
           </h1>
 
-          <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-xl animate-fade-up stagger-200">
-            Broken spring, dead opener, door off the track? Send me a quick
-            message or a photo and I&apos;ll tell you what&apos;s going on and
-            what it costs. No call center, no pressure, no surprises.
+          <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl animate-fade-up stagger-200">
+            Hi, I&apos;m {BUSINESS.owner}, the founder of {BUSINESS.shortName}.
+            With over five years of hands-on experience as a garage door
+            technician serving the Maryland community, I decided to take the
+            leap and start my own independent business. I&apos;m fortunate to
+            be backed by a strong network of great professionals I&apos;ve
+            connected with along the way. My core philosophy is simple:
+            service that is reliable, professional, and fast. When you call{" "}
+            {BUSINESS.shortName}, you can trust that your home is in expert
+            hands.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 animate-fade-up stagger-300">
