@@ -1,27 +1,43 @@
 import type { Metadata } from "next";
-import { Settings2, Zap, AlertTriangle } from "lucide-react";
+import { Settings2, Zap, AlertTriangle, Phone, Mail } from "lucide-react";
+import HeroSection from "@/components/landing/HeroSection";
+import ServicePreviewCard from "@/components/landing/ServicePreviewCard";
+import HowItWorksSection from "@/components/landing/HowItWorksSection";
+import WhyMeSection from "@/components/landing/WhyMeSection";
+import PromotionsSection from "@/components/landing/PromotionsSection";
+import ServiceAreaSection from "@/components/landing/ServiceAreaSection";
+import SectionHeading from "@/components/shared/SectionHeading";
+import CTAButton from "@/components/shared/CTAButton";
+import WhatsAppIcon from "@/components/shared/WhatsAppIcon";
+import { BUSINESS, CONTACT_LINKS } from "@/lib/contact";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ofirer92.github.io/tomerkk";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL ?? "https://tomersgarage.com",
+    canonical: SITE_URL,
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Tomer's Garage Door Services",
+  name: BUSINESS.name,
   description:
     "Professional garage door repair and installation in Maryland. Springs, openers, off-track repair.",
-  telephone: "+12407000000",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://tomersgarage.com",
+  telephone: BUSINESS.phoneE164,
+  email: BUSINESS.email,
+  url: SITE_URL,
   areaServed: [
+    "Baltimore County, MD",
+    "Baltimore City, MD",
+    "Anne Arundel County, MD",
+    "Howard County, MD",
     "Montgomery County, MD",
     "Prince George's County, MD",
-    "Howard County, MD",
+    "Carroll County, MD",
+    "Harford County, MD",
     "Frederick County, MD",
-    "Anne Arundel County, MD",
-    "Baltimore County, MD",
   ],
   serviceType: [
     "Garage Door Spring Repair",
@@ -29,15 +45,16 @@ const jsonLd = {
     "Garage Door Off-Track Repair",
     "Garage Door Installation",
   ],
-  openingHours: "Mo-Sa 07:00-19:00",
+  openingHours: BUSINESS.hoursSchema,
   priceRange: "$$",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: BUSINESS.phoneE164,
+    email: BUSINESS.email,
+    contactType: "customer service",
+    availableLanguage: ["English"],
+  },
 };
-import HeroSection from "@/components/landing/HeroSection";
-import ServicePreviewCard from "@/components/landing/ServicePreviewCard";
-import WhyMeSection from "@/components/landing/WhyMeSection";
-import PromotionsSection from "@/components/landing/PromotionsSection";
-import SectionHeading from "@/components/shared/SectionHeading";
-import CTAButton from "@/components/shared/CTAButton";
 
 const services = [
   {
@@ -75,13 +92,15 @@ export default function HomePage() {
       <HeroSection />
 
       {/* Services preview */}
-      <section className="py-16 px-4">
+      <section id="services" className="py-20 px-4 scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <SectionHeading
-            title="Most Common Issues"
-            subtitle="If your garage door is giving you trouble, chances are it's one of these."
+            eyebrow="What I fix"
+            title="Most common garage door issues"
+            subtitle="If your garage door is giving you trouble, chances are it's one of these. Tap one to learn what's happening and what to do."
+            centered
           />
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((s) => (
               <ServicePreviewCard key={s.href} {...s} />
             ))}
@@ -89,22 +108,48 @@ export default function HomePage() {
         </div>
       </section>
 
+      <HowItWorksSection />
       <WhyMeSection />
       <PromotionsSection />
+      <ServiceAreaSection />
 
       {/* Final CTA */}
-      <section className="py-16 px-4 text-center">
-        <div className="max-w-xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3">
-            Ready to fix your garage door?
-          </h2>
-          <p className="text-gray-600 mb-6">
-            It only takes a minute. I&apos;ll get back to you fast and give you
-            a straight answer.
-          </p>
-          <CTAButton href="/book" variant="primary" className="!text-base !px-8 !py-4">
-            Get My Free Estimate
-          </CTAButton>
+      <section className="px-4 pb-20">
+        <div className="relative max-w-5xl mx-auto bg-primary text-white rounded-[2rem] overflow-hidden px-6 py-12 md:px-14 md:py-16 text-center">
+          <div className="absolute inset-0 bg-grid-light opacity-40" aria-hidden="true" />
+          <div
+            className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-accent/25 blur-3xl"
+            aria-hidden="true"
+          />
+          <div className="relative">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+              Ready to fix your garage door?
+            </h2>
+            <p className="text-white/75 text-lg mb-8 max-w-xl mx-auto">
+              Message me on WhatsApp, call, or email — whichever is easiest.
+              I&apos;ll get back to you fast with a straight answer.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <CTAButton href={CONTACT_LINKS.whatsapp} variant="whatsapp" size="lg">
+                <WhatsAppIcon className="w-5 h-5" />
+                WhatsApp
+              </CTAButton>
+              <CTAButton href={CONTACT_LINKS.phone} variant="primary" size="lg">
+                <Phone className="w-5 h-5" />
+                {BUSINESS.phoneDisplay}
+              </CTAButton>
+              <CTAButton href={CONTACT_LINKS.email} variant="secondary" size="lg">
+                <Mail className="w-5 h-5" />
+                Email
+              </CTAButton>
+            </div>
+            <p className="mt-6 text-sm text-white/60">
+              Prefer a form?{" "}
+              <a href="/book" className="text-white underline underline-offset-4 hover:text-accent">
+                Request a free estimate
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     </>
