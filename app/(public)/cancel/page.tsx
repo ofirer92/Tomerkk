@@ -59,7 +59,7 @@ export default function CancelPage() {
 
   return (
     <div className="max-w-xl mx-auto px-4 py-12 md:py-16">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent mb-3">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange mb-3">
         Cancellations
       </p>
       <h1 className="text-3xl font-bold text-primary mb-2 tracking-tight">

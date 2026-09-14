@@ -40,10 +40,10 @@ export default function HowItWorksSection() {
               className="relative bg-white rounded-3xl border border-gray-200/80 p-7 shadow-sm"
             >
               <div className="flex items-center gap-4 mb-4">
-                <span className="w-12 h-12 rounded-2xl bg-gold-soft text-gold flex items-center justify-center">
+                <span className="w-12 h-12 rounded-2xl bg-orange-soft text-orange flex items-center justify-center">
                   <s.icon className="w-6 h-6" />
                 </span>
-                <span className="text-4xl font-bold text-primary/10 leading-none">
+                <span className="text-4xl font-bold text-orange/20 leading-none">
                   0{i + 1}
                 </span>
               </div>

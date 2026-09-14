@@ -45,7 +45,7 @@ export default function BookPage() {
       <section className="relative bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 bg-grid-light opacity-50" aria-hidden="true" />
         <div className="relative max-w-5xl mx-auto px-4 pt-12 pb-16 md:pt-16 md:pb-24 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold mb-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange mb-3">
             Free estimate
           </p>
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
@@ -66,7 +66,7 @@ export default function BookPage() {
         {/* Form */}
         <div className="lg:col-span-7 bg-white border border-gray-200/80 rounded-3xl shadow-xl shadow-primary/10 p-6 md:p-8">
           <div className="flex items-center gap-3 mb-6">
-            <span className="w-10 h-10 rounded-xl bg-accent-soft text-accent flex items-center justify-center">
+            <span className="w-10 h-10 rounded-xl bg-orange-soft text-orange flex items-center justify-center">
               <MessageSquareText className="w-5 h-5" />
             </span>
             <div>

@@ -17,7 +17,7 @@ export default function HeroSection() {
       {/* Decorative background */}
       <div className="absolute inset-0 bg-grid-light opacity-50" aria-hidden="true" />
       <div
-        className="absolute -top-40 -right-40 w-[520px] h-[520px] rounded-full bg-accent/25 blur-3xl"
+        className="absolute -top-40 -right-40 w-[520px] h-[520px] rounded-full bg-orange/25 blur-3xl"
         aria-hidden="true"
       />
       <div
@@ -101,8 +101,8 @@ export default function HeroSection() {
 
             {/* Trust chip */}
             <div className="absolute -bottom-5 -left-3 sm:-left-6 bg-white text-primary rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gold-soft flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5 text-gold" />
+              <div className="w-10 h-10 rounded-xl bg-orange-soft flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5 text-orange" />
               </div>
               <div className="leading-tight">
                 <p className="font-bold text-sm">Licensed &amp; insured</p>

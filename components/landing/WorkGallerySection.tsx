@@ -61,9 +61,9 @@ export default function WorkGallerySection() {
           ))}
         </div>
 
-        <div className="mt-10 bg-gold-soft border border-gold/30 rounded-3xl p-6 md:p-7 flex flex-col md:flex-row items-center gap-5 text-center md:text-left">
+        <div className="mt-10 bg-orange-soft border border-orange/30 rounded-3xl p-6 md:p-7 flex flex-col md:flex-row items-center gap-5 text-center md:text-left">
           <span className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm flex-shrink-0">
-            <Camera className="w-6 h-6 text-gold" />
+            <Camera className="w-6 h-6 text-orange" />
           </span>
           <div className="flex-1">
             <p className="font-bold text-primary text-lg">

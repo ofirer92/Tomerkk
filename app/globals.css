@@ -1,18 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand palette — orange-based (rust primary, vivid orange accent) */
-  --color-primary: #7c2d12;
-  --color-primary-dark: #431407;
-  --color-primary-light: #9a3412;
-  --color-accent: #ea580c;
-  --color-accent-hover: #c2410c;
-  --color-accent-soft: #fff7ed;
+  /* Brand palette */
+  --color-primary: #1d3a6b;
+  --color-primary-dark: #12274a;
+  --color-primary-light: #2a4f8f;
+  --color-accent: #c8102e;
+  --color-accent-hover: #a80d26;
+  --color-accent-soft: #fdeef0;
   --color-gold: #d4a017;
   --color-gold-soft: #fdf6e3;
+  --color-orange: #f97316;
+  --color-orange-hover: #ea580c;
+  --color-orange-soft: #fff4ec;
   --color-whatsapp: #25d366;
   --color-whatsapp-hover: #1ebe5a;
-  --color-surface: #fdf5ee;
+  --color-surface: #f7f5f1;
   --color-ink: #0f172a;
   --color-muted: #64748b;
   --color-danger-bg: #fef2f2;
