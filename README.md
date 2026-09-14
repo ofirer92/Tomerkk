@@ -3,7 +3,7 @@
 Marketing site for Kabriz Garage Doors, a family-run garage door sales,
 installation and repair business in Maryland.
 Built with Next.js (App Router, static export) and Tailwind CSS, deployed to
-GitHub Pages at <https://ofirer92.github.io/tomerkk/>.
+GitHub Pages at <https://ofirer92.github.io/Tomerkk/>.
 
 ## Contact details
 
@@ -28,12 +28,17 @@ Every button, link, form, and the LocalBusiness structured data read from it.
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000/tomerkk
+npm run dev      # http://localhost:3000/Tomerkk
 npm run build    # static export into ./out
 ```
 
 ## Deployment
 
 `.github/workflows/nextjs.yml` builds and publishes `./out` to GitHub Pages on
-every push to `main`. The site uses `basePath: /tomerkk` and `trailingSlash`
-so each route exports as `route/index.html`.
+every push to `main`. The base path (`/Tomerkk`, matching the repository
+name's casing) lives in `lib/base-path.ts` and feeds both `next.config.ts` and
+image URLs. `trailingSlash` makes each route export as `route/index.html`.
+
+The workflow deliberately does not pass `static_site_generator: next` to
+`actions/configure-pages`: that option writes a competing `next.config.js`
+which Next.js would load instead of `next.config.ts`.

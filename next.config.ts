@@ -1,13 +1,14 @@
 import type { NextConfig } from "next";
+import { BASE_PATH } from "./lib/base-path";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  output: "export",
   trailingSlash: true,
   images: {
     unoptimized: true,
   },
-  basePath: '/tomerkk',
-  assetPrefix: '/tomerkk',
+  basePath: BASE_PATH,
+  assetPrefix: BASE_PATH,
   typescript: {
     ignoreBuildErrors: true,
   },
