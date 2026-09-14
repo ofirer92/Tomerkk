@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Phone, Mail, X, Wrench, Clock, ShieldCheck, ArrowRight } from "lucide-react";
+import { Phone, Mail, X, Clock, ShieldCheck, ArrowRight } from "lucide-react";
+import Logo from "@/components/shared/Logo";
 import { BUSINESS, CONTACT_LINKS } from "@/lib/contact";
 import WhatsAppIcon from "@/components/shared/WhatsAppIcon";
 
@@ -29,7 +30,7 @@ const channels = [
   {
     key: "phone",
     label: `Call ${BUSINESS.phoneDisplay}`,
-    hint: "Talk to Tomer directly",
+    hint: `Talk to ${BUSINESS.owner} directly`,
     href: CONTACT_LINKS.phone,
     icon: Phone,
     classes:
@@ -135,20 +136,18 @@ export default function ContactSplash() {
             type="button"
             onClick={close}
             aria-label="Close and browse the site"
-            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
             <X className="w-5 h-5" />
           </button>
 
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-2xl bg-accent flex items-center justify-center shadow-lg shadow-accent/30">
-              <Wrench className="w-6 h-6 text-white" />
-            </div>
+            <Logo size={64} priority className="shadow-lg shadow-black/30" />
             <div>
-              <p className="text-xs uppercase tracking-wider text-white/60 font-semibold">
-                {BUSINESS.shortName}
+              <p className="font-bold text-white leading-tight">{BUSINESS.name}</p>
+              <p className="text-xs uppercase tracking-wider text-gold font-semibold">
+                {BUSINESS.tagline}
               </p>
-              <p className="text-sm text-white/90">{BUSINESS.tagline}</p>
             </div>
           </div>
 
@@ -158,16 +157,16 @@ export default function ContactSplash() {
           >
             Garage door trouble?
             <br />
-            <span className="text-accent">Reach Tomer in one tap.</span>
+            <span className="text-gold">Reach {BUSINESS.owner} in one tap.</span>
           </h2>
 
           <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-white/75">
             <span className="inline-flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-accent" />
+              <Clock className="w-3.5 h-3.5 text-gold" />
               {BUSINESS.hours}
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-accent" />
+              <ShieldCheck className="w-3.5 h-3.5 text-gold" />
               Licensed &amp; insured · {BUSINESS.serviceArea}
             </span>
           </div>

@@ -34,7 +34,7 @@ export default function ServicePageTemplate({
       <section className="relative bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 bg-grid-light opacity-50" aria-hidden="true" />
         <div
-          className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-accent/20 blur-3xl"
+          className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-gold/15 blur-3xl"
           aria-hidden="true"
         />
         <div className="relative max-w-4xl mx-auto px-4 pt-10 pb-14 md:pt-16 md:pb-20">
@@ -51,14 +51,14 @@ export default function ServicePageTemplate({
           </nav>
 
           <div className="flex items-start gap-5 animate-fade-up">
-            <div className="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center shadow-lg shadow-accent/30 flex-shrink-0">
-              <Icon className="w-8 h-8 text-white" />
+            <div className="w-16 h-16 rounded-2xl bg-gold flex items-center justify-center shadow-lg shadow-gold/30 flex-shrink-0">
+              <Icon className="w-8 h-8 text-primary-dark" />
             </div>
             <div>
               <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-3">
                 {serviceName}
               </h1>
-              <p className="text-accent font-semibold text-lg md:text-xl">{tagline}</p>
+              <p className="text-gold font-semibold text-lg md:text-xl">{tagline}</p>
             </div>
           </div>
 

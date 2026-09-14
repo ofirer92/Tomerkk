@@ -4,9 +4,9 @@ import SectionHeading from "@/components/shared/SectionHeading";
 const reasons = [
   {
     icon: User,
-    title: "You deal with me, not a call center",
+    title: "You talk to Tomer, not a call center",
     description:
-      "I answer my own phone. I show up myself. No subcontractors, no surprises.",
+      "I answer my own phone and I show up myself. No subcontractors, no surprises.",
   },
   {
     icon: DollarSign,
@@ -36,14 +36,14 @@ export default function WhyMeSection() {
     >
       <div className="absolute inset-0 bg-grid-light opacity-50" aria-hidden="true" />
       <div
-        className="absolute -bottom-32 right-0 w-[420px] h-[420px] rounded-full bg-accent/15 blur-3xl"
+        className="absolute -bottom-32 right-0 w-[420px] h-[420px] rounded-full bg-gold/15 blur-3xl"
         aria-hidden="true"
       />
       <div className="relative max-w-6xl mx-auto">
         <SectionHeading
-          eyebrow="Independent & accountable"
-          title="Why choose Tomer?"
-          subtitle="I started my own business because I believe in doing things right — every single time."
+          eyebrow="Family-run & accountable"
+          title="Why homeowners choose Kabriz"
+          subtitle="I started Kabriz Garage Doors because I believe in doing things right — every single time, for every neighbor."
           centered
           light
         />
@@ -54,8 +54,8 @@ export default function WhyMeSection() {
               key={r.title}
               className="flex gap-5 bg-white/[0.07] hover:bg-white/[0.12] border border-white/10 rounded-3xl p-6 transition-colors"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center">
-                <r.icon className="w-6 h-6 text-accent" />
+              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-gold/15 border border-gold/30 flex items-center justify-center">
+                <r.icon className="w-6 h-6 text-gold" />
               </div>
               <div>
                 <h3 className="font-semibold text-white text-lg mb-1.5">{r.title}</h3>

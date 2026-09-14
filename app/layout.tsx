@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "react-hot-toast";
-import { BUSINESS } from "@/lib/contact";
+import { BUSINESS, IMAGES } from "@/lib/contact";
 import "./globals.css";
 
-const geist = Geist({
-  variable: "--font-geist-sans",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const SITE_URL =
@@ -16,12 +17,13 @@ const SITE_URL =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${BUSINESS.name} | Maryland`,
-    template: `%s | ${BUSINESS.shortName} Door`,
+    default: `${BUSINESS.name} | Garage Door Repair & Installation in Maryland`,
+    template: `%s | ${BUSINESS.name}`,
   },
   description:
-    "Professional garage door repair and installation in Maryland. Springs, openers, off-track doors — same-day service. WhatsApp, call, or email Tomer for a free estimate.",
+    "Kabriz Garage Doors — friendly, licensed garage door sales, installation and repair across Maryland. Springs, openers, off-track doors, same-day service. WhatsApp, call, or email Tomer for a free estimate.",
   keywords: [
+    "Kabriz Garage Doors",
     "garage door repair Maryland",
     "garage door spring repair",
     "garage door opener installation",
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     "garage door repair Baltimore",
     "garage door off track",
   ],
-  applicationName: BUSINESS.shortName,
+  applicationName: BUSINESS.name,
   appleWebApp: {
     capable: true,
     title: BUSINESS.shortName,
@@ -42,15 +44,20 @@ export const metadata: Metadata = {
   openGraph: {
     title: BUSINESS.name,
     description:
-      "Fast, reliable garage door repair in Maryland. Free estimates. Reach Tomer on WhatsApp, phone, or email.",
+      "Friendly, licensed garage door repair and installation in Maryland. Free estimates. Reach Tomer on WhatsApp, phone, or email.",
     type: "website",
     locale: "en_US",
     siteName: BUSINESS.name,
+    images: [{ url: IMAGES.og, width: 1200, height: 630, alt: `${BUSINESS.name} logo` }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [IMAGES.og],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f2740",
+  themeColor: "#1d3a6b",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -62,8 +69,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr" className={`${geist.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white text-ink">
+    <html lang="en" dir="ltr" className={`${jakarta.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col text-ink">
         {children}
         <Toaster position="top-right" />
         <Analytics />
