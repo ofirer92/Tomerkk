@@ -1,80 +1,121 @@
 import Link from "next/link";
-import { Phone, MapPin, Clock, Wrench } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Wrench } from "lucide-react";
+import { BUSINESS, CONTACT_LINKS } from "@/lib/contact";
+import WhatsAppIcon from "@/components/shared/WhatsAppIcon";
+
+const serviceLinks = [
+  { href: "/services/springs", label: "Spring Repair" },
+  { href: "/services/openers", label: "Opener Installation" },
+  { href: "/services/off-track", label: "Off-Track Door" },
+  { href: "/book", label: "Free Estimate" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white mt-auto">
-      <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-primary-dark text-white mt-auto pb-20 md:pb-0">
+      <div className="max-w-6xl mx-auto px-4 pt-14 pb-10 grid grid-cols-1 md:grid-cols-12 gap-10">
         {/* Brand */}
-        <div>
-          <div className="flex items-center gap-2 font-bold text-lg mb-3">
-            <Wrench className="w-5 h-5 text-accent" />
+        <div className="md:col-span-5">
+          <div className="flex items-center gap-2.5 font-bold text-lg mb-4">
+            <span className="w-9 h-9 rounded-xl bg-accent flex items-center justify-center">
+              <Wrench className="w-5 h-5 text-white" />
+            </span>
             <span>
               Tomer&apos;s <span className="text-accent">Garage</span>
             </span>
           </div>
-          <p className="text-white/70 text-sm leading-relaxed">
-            Professional garage door repair and installation across Maryland.
-            Honest pricing, same-day service.
+          <p className="text-white/65 text-sm leading-relaxed max-w-sm">
+            Independent, licensed garage door repair and installation across
+            Maryland. You talk to the technician, get a straight price, and the
+            job is done right the first time.
           </p>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            <a
+              href={CONTACT_LINKS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-hover text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors"
+            >
+              <WhatsAppIcon className="w-4 h-4" />
+              WhatsApp
+            </a>
+            <a
+              href={CONTACT_LINKS.phone}
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors"
+            >
+              <Phone className="w-4 h-4 text-accent" />
+              Call
+            </a>
+            <a
+              href={CONTACT_LINKS.email}
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors"
+            >
+              <Mail className="w-4 h-4 text-accent" />
+              Email
+            </a>
+          </div>
         </div>
 
         {/* Links */}
-        <div>
-          <h3 className="font-semibold mb-3 text-accent">Services</h3>
-          <ul className="space-y-2 text-sm text-white/80">
-            <li>
-              <Link href="/services/springs" className="hover:text-accent transition-colors">
-                Spring Repair
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/openers" className="hover:text-accent transition-colors">
-                Opener Installation
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/off-track" className="hover:text-accent transition-colors">
-                Off-Track Door
-              </Link>
-            </li>
-            <li>
-              <Link href="/book" className="hover:text-accent transition-colors">
-                Free Estimate
-              </Link>
-            </li>
-            <li>
-              <Link href="/portal/login" className="hover:text-accent transition-colors">
-                Customer Portal
-              </Link>
-            </li>
+        <div className="md:col-span-3">
+          <h3 className="font-semibold mb-4 text-white">Services</h3>
+          <ul className="space-y-2.5 text-sm text-white/70">
+            {serviceLinks.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="hover:text-accent transition-colors">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Contact */}
-        <div>
-          <h3 className="font-semibold mb-3 text-accent">Contact</h3>
-          <ul className="space-y-3 text-sm text-white/80">
-            <li className="flex items-center gap-2">
+        <div className="md:col-span-4">
+          <h3 className="font-semibold mb-4 text-white">Contact</h3>
+          <ul className="space-y-3 text-sm text-white/75">
+            <li className="flex items-center gap-3">
               <Phone className="w-4 h-4 text-accent flex-shrink-0" />
-              <a href="tel:+12407000000" className="hover:text-accent transition-colors">
-                (240) 700-0000
+              <a href={CONTACT_LINKS.phone} className="hover:text-accent transition-colors">
+                {BUSINESS.phoneDisplay}
               </a>
             </li>
-            <li className="flex items-start gap-2">
-              <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
-              <span>Serving all of Maryland</span>
+            <li className="flex items-center gap-3">
+              <Mail className="w-4 h-4 text-accent flex-shrink-0" />
+              <a
+                href={CONTACT_LINKS.email}
+                className="hover:text-accent transition-colors break-all"
+              >
+                {BUSINESS.email}
+              </a>
             </li>
-            <li className="flex items-start gap-2">
+            <li className="flex items-start gap-3">
+              <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+              <span>Serving all of {BUSINESS.serviceArea}</span>
+            </li>
+            <li className="flex items-start gap-3">
               <Clock className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
-              <span>Mon–Sat: 7am – 7pm<br />Emergency service available</span>
+              <span>
+                {BUSINESS.hours}
+                <br />
+                <span className="text-white/55">Emergency service available</span>
+              </span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-white/10 text-center py-4 text-white/50 text-xs">
-        © {new Date().getFullYear()} Tomer&apos;s Garage Door Services · Maryland Licensed Contractor
+      <div className="border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/45 text-xs">
+          <span>
+            © {new Date().getFullYear()} {BUSINESS.name} · Maryland Licensed
+            Contractor
+          </span>
+          <Link href="/cancel" className="hover:text-white/80 transition-colors">
+            Cancel a service agreement
+          </Link>
+        </div>
       </div>
     </footer>
   );

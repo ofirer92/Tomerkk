@@ -2,11 +2,17 @@
 
 @theme {
   /* Brand palette */
-  --color-primary: #1e3a5f;
-  --color-primary-dark: #152c47;
-  --color-primary-light: #2a5080;
+  --color-primary: #0f2740;
+  --color-primary-dark: #0a1a2c;
+  --color-primary-light: #1e3a5f;
   --color-accent: #f97316;
   --color-accent-hover: #ea6c0a;
+  --color-accent-soft: #fff4ec;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1ebe5a;
+  --color-surface: #f7f8fa;
+  --color-ink: #0f172a;
+  --color-muted: #64748b;
   --color-danger-bg: #fef2f2;
   --color-danger-text: #b91c1c;
 
@@ -21,21 +27,105 @@
   /* Font */
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Motion */
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.4s ease-out both;
+  --animate-scale-in: scale-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.94) translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 rgb(37 211 102 / 0.55);
+    }
+    70% {
+      box-shadow: 0 0 0 14px rgb(37 211 102 / 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgb(37 211 102 / 0);
+    }
+  }
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #ffffff;
+  color: var(--color-ink);
+  text-rendering: optimizeLegibility;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Subtle dotted grid used behind dark hero / CTA blocks */
+.bg-grid-light {
+  background-image: radial-gradient(
+    rgb(255 255 255 / 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+/* Delay helpers for staggered entrances */
+.stagger-100 {
+  animation-delay: 100ms;
+}
+.stagger-200 {
+  animation-delay: 200ms;
+}
+.stagger-300 {
+  animation-delay: 300ms;
+}
+.stagger-400 {
+  animation-delay: 400ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
