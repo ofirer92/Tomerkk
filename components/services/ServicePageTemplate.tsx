@@ -51,8 +51,8 @@ export default function ServicePageTemplate({
           </nav>
 
           <div className="flex items-start gap-5 animate-fade-up">
-            <div className="w-16 h-16 rounded-2xl bg-gold flex items-center justify-center shadow-lg shadow-gold/30 flex-shrink-0">
-              <Icon className="w-8 h-8 text-primary-dark" />
+            <div className="w-16 h-16 rounded-2xl bg-orange flex items-center justify-center shadow-lg shadow-orange/30 flex-shrink-0">
+              <Icon className="w-8 h-8 text-white" />
             </div>
             <div>
               <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-3">
@@ -78,7 +78,7 @@ export default function ServicePageTemplate({
       <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 space-y-10">
         {/* Analogy & description */}
         <div className="bg-surface border border-gray-200/80 rounded-3xl p-6 md:p-8">
-          <p className="text-primary text-lg leading-relaxed italic mb-4 border-l-4 border-accent pl-4">
+          <p className="text-primary text-lg leading-relaxed italic mb-4 border-l-4 border-orange pl-4">
             &ldquo;{analogy}&rdquo;
           </p>
           <p className="text-gray-700 leading-relaxed">{description}</p>

@@ -15,7 +15,7 @@ export default function FloatingContact() {
       {/* Mobile bottom bar */}
       <nav
         aria-label="Quick contact"
-        className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-gray-200 shadow-[0_-6px_24px_rgb(67_20_7_/_0.15)]"
+        className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-gray-200 shadow-[0_-6px_24px_rgb(15_39_64_/_0.12)]"
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
         <div className="grid grid-cols-3 gap-2 p-2">

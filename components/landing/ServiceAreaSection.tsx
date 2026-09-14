@@ -31,11 +31,11 @@ export default function ServiceAreaSection() {
                 key={area}
                 className="inline-flex items-center gap-2 bg-surface border border-gray-200/80 rounded-full px-4 py-2 text-sm font-medium text-primary"
               >
-                <MapPin className="w-4 h-4 text-accent" />
+                <MapPin className="w-4 h-4 text-orange" />
                 {area}
               </li>
             ))}
-            <li className="inline-flex items-center gap-2 bg-gold-soft border border-gold/30 rounded-full px-4 py-2 text-sm font-medium text-primary">
+            <li className="inline-flex items-center gap-2 bg-orange-soft border border-orange/30 rounded-full px-4 py-2 text-sm font-medium text-orange">
               + surrounding areas
             </li>
           </ul>
