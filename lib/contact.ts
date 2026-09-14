@@ -15,8 +15,8 @@ export const BUSINESS = {
   /** Human-friendly display */
   phoneDisplay: "(443) 381-4876",
   email: "Kabrizgaragedoors@gmail.com",
-  hours: "Mon–Sat · 7am – 7pm",
-  hoursSchema: "Mo-Sa 07:00-19:00",
+  hours: "Sun–Fri · 8am – 6pm",
+  hoursSchema: "Su-Fr 08:00-18:00",
   serviceArea: "Maryland",
 } as const;
 

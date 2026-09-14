@@ -16,9 +16,9 @@ interface EstimateFormProps {
 type Channel = "whatsapp" | "email";
 
 const TIME_LABELS: Record<string, string> = {
-  morning: "Morning (7am–12pm)",
-  afternoon: "Afternoon (12pm–5pm)",
-  evening: "Evening (5pm–7pm)",
+  morning: "Morning (8am–12pm)",
+  afternoon: "Afternoon (12pm–3pm)",
+  evening: "Late afternoon (3pm–6pm)",
 };
 
 const inputClass =
@@ -215,9 +215,9 @@ export default function EstimateForm({
           </label>
           <select id="est-time" {...register("preferred_time")} className={inputClass}>
             <option value="">Any time</option>
-            <option value="morning">Morning (7am–12pm)</option>
-            <option value="afternoon">Afternoon (12pm–5pm)</option>
-            <option value="evening">Evening (5pm–7pm)</option>
+            <option value="morning">Morning (8am–12pm)</option>
+            <option value="afternoon">Afternoon (12pm–3pm)</option>
+            <option value="evening">Late afternoon (3pm–6pm)</option>
           </select>
         </div>
       </div>
