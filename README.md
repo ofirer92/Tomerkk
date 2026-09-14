@@ -3,7 +3,7 @@
 Marketing site for Kabriz Garage Doors, a family-run garage door sales,
 installation and repair business in Maryland.
 Built with Next.js (App Router, static export) and Tailwind CSS, deployed to
-GitHub Pages at <https://ofirer92.github.io/Tomerkk/>.
+GitHub Pages at <https://kabriz.com>.
 
 ## Contact details
 
@@ -28,16 +28,21 @@ Every button, link, form, and the LocalBusiness structured data read from it.
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000/Tomerkk
+npm run dev      # http://localhost:3000
 npm run build    # static export into ./out
 ```
 
 ## Deployment
 
 `.github/workflows/nextjs.yml` builds and publishes `./out` to GitHub Pages on
-every push to `main`. The base path (`/Tomerkk`, matching the repository
-name's casing) lives in `lib/base-path.ts` and feeds both `next.config.ts` and
-image URLs. `trailingSlash` makes each route export as `route/index.html`.
+every push to `main`. The custom domain (`kabriz.com`) is served from a
+`public/CNAME` file, which the static export copies to `out/CNAME` — GitHub
+Pages reads it to keep the custom domain bound across deploys. It must also
+be set once under repo Settings → Pages → Custom domain, alongside the DNS
+records at the registrar (see the domain-setup notes for this project).
+The base path lives in `lib/base-path.ts` and feeds both `next.config.ts` and
+image URLs; it's empty while the site is served from the domain's root.
+`trailingSlash` makes each route export as `route/index.html`.
 
 The workflow deliberately does not pass `static_site_generator: next` to
 `actions/configure-pages`: that option writes a competing `next.config.js`
